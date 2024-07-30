@@ -1,5 +1,7 @@
-﻿using Wallet.BLL.Logic.Contracts.Notififcation;
+﻿using Wallet.BLL.Logic.Contracts.Kafka;
+using Wallet.BLL.Logic.Contracts.Notififcation;
 using Wallet.BLL.Logic.Contracts.Users;
+using Wallet.BLL.Logic.Kafka;
 using Wallet.BLL.Logic.Notification;
 using Wallet.BLL.Logic.Users;
 using Wallet.Common.Entities.HttpClientts;
@@ -15,6 +17,7 @@ namespace Wallet.Api.Extensions
         {
             services.AddScoped<IUserLogic, UserLogic>();
             services.AddScoped<INotificationLogic, NotificationLogic>();
+            services.AddScoped<IKafkaProducer, KafkaProducer>();
             return services;
         }
 
